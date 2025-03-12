@@ -14,7 +14,7 @@ const categories = [
 ];
 
 const HomePage = () => {
-	const { fetchFeaturedProducts, products, isLoading } = useProductStore();
+	const { fetchFeaturedProducts, products } = useProductStore();
 
 	useEffect(() => {
 		fetchFeaturedProducts();
@@ -36,7 +36,7 @@ const HomePage = () => {
 					))}
 				</div>
 
-				{!isLoading && products.length > 0 && <FeaturedProducts featuredProducts={products} />}
+				<FeaturedProducts featuredProducts={products} />
 			</div>
 		</div>
 	);
